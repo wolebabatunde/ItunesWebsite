@@ -21,14 +21,20 @@ $(function() {
 });
 
 // // SMOOTH SCROLLING
-// $('a[href*="#"]').on('click', function(e) {
-//   e.preventDefault()
+$('.cf a').on('click', function(event){
+  if(this.hash !== ''){
+    event.preventDefault();
+    
+    const hash = this.hash;
 
-//   $('html, body').animate(
-//     {
-//       scrollTop: $($(this).attr('href')).offset().top,
-//     },
-//     1000,
-//     'linear'
-//   )
-// })
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top
+      },
+      800,
+      function(){
+        window.location.hash = hash;
+      }
+    );
+  }
+})
