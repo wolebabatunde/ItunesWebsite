@@ -379,6 +379,6 @@ body {
 
   @media all and (orientation:landscape){
     .section img{
-      max
+       max-width: 100%;
     }
   }
